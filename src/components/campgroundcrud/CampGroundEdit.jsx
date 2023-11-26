@@ -23,7 +23,7 @@ export default function CampGroundEdit() {
   }
   return (
     <div className="container my-5 d-flex flex-column  align-items-center ">
-      <h1 className="mb-5">
+      <h1 className="mb-5 text-center">
         {" "}
         <Link to="/info" state={{id:id,name:name}}>
           <svg

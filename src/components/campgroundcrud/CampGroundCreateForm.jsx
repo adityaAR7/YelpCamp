@@ -27,7 +27,7 @@ export default function CreateCampGroundForm(props) {
 
   return (
       <div className="container my-5 d-flex flex-column align-items-center">
-        <h1 className="mb-5">
+        <h1 className="mb-5 text-center">
           {" "}
           <Link to="/home">
             <svg
