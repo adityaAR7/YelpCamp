@@ -9,7 +9,7 @@ export default function CampGroundSignup(props) {
   
   const handleLocalAuth = async(data)=>{
     try{
-      const response = await axios.post("http://localhost:3000/auth/local/register",data);
+      const response = await axios.post("https://yelpcampbackend-production.up.railway.app/auth/local/register",data);
       if(response.status == 200){
         props.setUser(response.data.user);
         navigate("/")

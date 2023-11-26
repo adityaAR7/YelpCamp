@@ -31,7 +31,7 @@ export default function CampGroundInfo(props) {
 
   const reload = async () => {
     const response = await axios.get(
-      `http://localhost:3000/fetch/` + props.user.id
+      `https://yelpcampbackend-production.up.railway.app/fetch/` + props.user.id
     );
     let result = response.data.result;
     result = result.map((item) => {
@@ -52,7 +52,7 @@ export default function CampGroundInfo(props) {
       setSelectedId(Number(e.target.id));
       setComments([]);
       const response = await axios.get(
-        `http://localhost:3000/fetch/info/${id}/${e.target.id}`
+        `https://yelpcampbackend-production.up.railway.app/fetch/info/${id}/${e.target.id}`
       );
       const result = response.data.result;
       const imageContent = new Uint8Array(JSON.parse(result["image"]));
@@ -68,11 +68,11 @@ export default function CampGroundInfo(props) {
       setImage(image_url);
       setAddInfo(false);
 
-      const response2 = await axios.get(`http://localhost:3000/name/${owner}`)
+      const response2 = await axios.get(`https://yelpcampbackend-production.up.railway.app/name/${owner}`)
       setOwnerName(response2.data.result);
 
       const response1 = await axios.get(
-        `http://localhost:3000/fetch/info/comment/${infoId}`
+        `https://yelpcampbackend-production.up.railway.app/fetch/info/comment/${infoId}`
       );
       setComments(response1.data.result);
 
@@ -85,7 +85,7 @@ export default function CampGroundInfo(props) {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/delete/info/${infoId}/${id}/${props.user.id}`
+        `https://yelpcampbackend-production.up.railway.app/delete/info/${infoId}/${id}/${props.user.id}`
       );
       if (response.data.isEmpty == true) {
         reload();
@@ -100,7 +100,7 @@ export default function CampGroundInfo(props) {
   const handleListItem = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/fetch/total/info/${id}`
+        `https://yelpcampbackend-production.up.railway.app/fetch/total/info/${id}`
       );
       let result = [];
       for (let i = 2; i <= response.data.count; i++) {
@@ -119,7 +119,7 @@ export default function CampGroundInfo(props) {
     try {
       const date = new Date().toISOString().slice(0, 10);
       const response = await axios.post(
-        `http://localhost:3000/new/comment/info`,
+        `https://yelpcampbackend-production.up.railway.app/new/comment/info`,
         {
           infoId: infoId,
           comment: data.comment,

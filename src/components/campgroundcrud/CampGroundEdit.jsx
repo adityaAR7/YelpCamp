@@ -15,7 +15,7 @@ export default function CampGroundEdit() {
       // const image_url = URL.createObjectURL(image[0],{type: "image/png"});
       const image_content = [...new Uint8Array(await image[0].arrayBuffer())];
 
-      await axios.put(`http://localhost:3000/edit/info/${infoId}/${id}`,{name:name,image:image_content,content:content});
+      await axios.put(`https://yelpcampbackend-production.up.railway.app/edit/info/${infoId}/${id}`,{name:name,image:image_content,content:content});
       navigate("/info",{state:{id:id}});
   } catch (error) {
       console.log(error);

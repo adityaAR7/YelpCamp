@@ -14,7 +14,7 @@ export default function CreateCampGroundForm(props) {
       const image_url = URL.createObjectURL(image[0],{type: "image/png"});
       const image_content = [...new Uint8Array(await image[0].arrayBuffer())];
 
-      const response = await axios.post("http://localhost:3000/new/campground",{title:title,image:image_content,content:content,uid:user["id"]});
+      const response = await axios.post("https://yelpcampbackend-production.up.railway.app/new/campground",{title:title,image:image_content,content:content,uid:user["id"]});
       setItems((prevItems)=>{
         return [...prevItems,{title:title,image:image_url,id:response.data.result}]
       })

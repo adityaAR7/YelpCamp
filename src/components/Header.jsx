@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Header(props) {
   const handleLogout = () => {
-    window.open("http://localhost:3000/auth/logout", "_self");
+    window.open("https://yelpcampbackend-production.up.railway.app/auth/logout", "_self");
   };
   return (
     <header className="p-3 bg-light mb-4 border-bottom ">

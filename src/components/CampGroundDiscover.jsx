@@ -9,7 +9,7 @@ export default function CampGroundDiscover() {
   const handleDiscover = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/fetch/all`
+        `https://yelpcampbackend-production.up.railway.app/fetch/all`
       );
       let result = response.data.result;
       result = result.map((item) => {

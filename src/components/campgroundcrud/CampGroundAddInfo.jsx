@@ -12,7 +12,7 @@ export default function CampGroundAddInfo(props) {
         const image_url = URL.createObjectURL(image[0],{type: "image/png"});
         const image_content = [...new Uint8Array(await image[0].arrayBuffer())];
   
-        const response = await axios.post(`http://localhost:3000/new/info/${id}/${user.id}`,{image:image_content,content:content});
+        const response = await axios.post(`https://yelpcampbackend-production.up.railway.app/new/info/${id}/${user.id}`,{image:image_content,content:content});
         setImage(image_url);
         setContent(content);
         handleListItem();

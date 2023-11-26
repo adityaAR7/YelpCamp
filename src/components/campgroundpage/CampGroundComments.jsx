@@ -21,7 +21,7 @@ export default function CampGroundComments(props) {
 
   const handleEditComment = async (data) => {
     try {
-      await axios.put(`http://localhost:3000/edit/comment/info/${id}`, {
+      await axios.put(`https://yelpcampbackend-production.up.railway.app/edit/comment/info/${id}`, {
         comment: data.comment,
       });
     } catch (error) {
@@ -30,10 +30,10 @@ export default function CampGroundComments(props) {
   };
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3000/delete/comment/${id}`);
+      await axios.delete(`https://yelpcampbackend-production.up.railway.app/delete/comment/${id}`);
 
       const response = await axios.get(
-        `http://localhost:3000/fetch/info/comment/${infoId}`
+        `https://yelpcampbackend-production.up.railway.app/fetch/info/comment/${infoId}`
       );
       setComments(response.data.result);
     } catch (error) {

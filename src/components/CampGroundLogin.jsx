@@ -11,11 +11,11 @@ export default function CampGroundLogin(props) {
   const {register,handleSubmit,formState:{errors}}  = useForm();
 
   const handleGoogleAuth = async()=>{
-    window.open("http://localhost:3000/auth/google","_self");
+    window.open("https://yelpcampbackend-production.up.railway.app/auth/google","_self");
   }
   const handleLocalAuth = async(data)=>{
     try{
-      const response = await axios.post("http://localhost:3000/auth/local/login",data);
+      const response = await axios.post("https://yelpcampbackend-production.up.railway.app/auth/local/login",data);
       if(response.status == 200){
         navigate("/");
         props.setUser(response.data.user);

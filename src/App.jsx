@@ -25,11 +25,11 @@ export default function App() {
   const handleAuthProcess = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/auth/login/success"
+        "https://yelpcampbackend-production.up.railway.app/auth/login/success"
       );
       setUser(response.data.user);
       const response1 = await axios.get(
-        `http://localhost:3000/fetch/` + response.data.user.id
+        `https://yelpcampbackend-production.up.railway.app/fetch/` + response.data.user.id
       );
       let result = response1.data.result;
       result = result.map((item) => {
