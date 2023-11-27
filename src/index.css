@@ -20,3 +20,19 @@ code {
   padding: 6px;
   width: 100%;
 }
+
+@media screen and (max-width:380px) {
+  .img-resp{
+    width: 2em!important;
+  }
+  .span-responsive{
+    font-size: medium!important;
+  }
+  .link-responsive{
+    font-size: medium!important;
+  }
+  .img-responsive{
+    height: 20px;
+    width: 20px;
+  }
+}

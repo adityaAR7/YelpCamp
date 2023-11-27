@@ -16,15 +16,15 @@ export default function Header(props) {
             <img
               src="https://raw.githubusercontent.com/NikelausM/yelp-camp/master/Campground%20Logo.PNG"
               alt="YelpCamp"
-              className="me-2"
+              className="me-2 img-resp"
               style={{ width: "3em" }}
             />
-            <span className="fs-4 text-dark">YelpCamp</span>
+            <span className="fs-4 text-dark span-responsive pt-1">YelpCamp</span>
           </a>
           {props.user && (
             <div className="row">
               <div className="col p-0">
-                <Link to="/discover" className="text-secondary text-decoration-none fs-5 me-2">Discover</Link>
+                <Link to="/discover" className="text-secondary text-decoration-none fs-5 me-2 link-responsive">Discover</Link>
               </div>
               <div class="col flex-shrink-0 dropdown">
                 <a
@@ -43,7 +43,7 @@ export default function Header(props) {
                     alt="mdo"
                     width="32"
                     height="32"
-                    class="rounded-circle"
+                    class="rounded-circle img-responsive"
                   />
                 </a>
                 <ul
